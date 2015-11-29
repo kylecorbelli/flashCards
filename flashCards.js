@@ -2,6 +2,32 @@ $(document).ready(function() {
 
 'use strict';
 
+var cardSide = 'front';
+var currentCard;
+
+var randomCard = function(cardStack) {
+    var randIndex = Math.floor(Math.random() * cardStack.length);
+    return cardStack[randIndex];
+};
+
+var nextCard = function() {
+    currentCard = randomCard(commands);
+    $('.card-text').text(currentCard[cardSide]);
+};
+
+var flipCard = function() {
+    cardSide = (cardSide === 'front') ? 'back' : 'front';
+    $('.card-text').text(currentCard[cardSide]);
+};
+
+$('.next-card').on('click', function() {
+    nextCard();
+});
+
+$('.flip-card').on('click', function() {
+    flipCard();
+});
+
 var commands = [
     {front: 'pwd', back: 'print working directory'},
     {front: 'hostname', back: 'my computer\'s network name'},
@@ -28,10 +54,5 @@ var commands = [
     {front: 'chmod', back: 'change permission modifiers'},
     {front: 'chown', back: 'change ownership'}
 ];
-
-
-
-
-
 
 });
