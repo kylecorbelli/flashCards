@@ -5,6 +5,7 @@ $(document).ready(function() {
 var cardSide = 'front';
 var tempCardSide = cardSide;
 var swapText = 'Show backs';
+var questionOrAnswer = 'Answer';
 var currentCard;
 
 var randomCard = function(cardStack) {
@@ -16,11 +17,15 @@ var nextCard = function() {
     tempCardSide = cardSide;
     currentCard = randomCard(commands);
     $('.card-text').text(currentCard[cardSide]);
+    questionOrAnswer = 'Answer';
+    $('.flip-card').text(questionOrAnswer);
 };
 
 var flipCard = function() {
     tempCardSide = (tempCardSide === 'front') ? 'back' : 'front';
     $('.card-text').text(currentCard[tempCardSide]);
+    questionOrAnswer = (questionOrAnswer === 'Answer') ? 'Question' : 'Answer';
+    $('.flip-card').text(questionOrAnswer);
 };
 
 var swapSides = function() {
@@ -29,6 +34,8 @@ var swapSides = function() {
     swapText = (swapText === 'Show backs') ? 'Show fronts' : 'Show backs';
     $('.swap-sides').text(swapText);
     $('.card-text').text(currentCard[cardSide]);
+    questionOrAnswer = (questionOrAnswer === 'Answer') ? 'Question' : 'Answer';
+    $('.flip-card').text(questionOrAnswer);
 };
 
 $('.next-card').on('click', function() {
