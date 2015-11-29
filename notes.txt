@@ -1,0 +1,6 @@
+Colors:
+white: #faffd8
+tan: #ecffb0
+gray: #9aa899
+dark blue: #54577c
+light blue: #4a7b9d
