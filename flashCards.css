@@ -14,7 +14,6 @@ h1 {
     width: 75%;
     max-width: 500px;
     height: 300px;
-    /*line-height: 300px;*/
     margin-left: auto;
     margin-right: auto;
     background-color: #e2e2e2;
@@ -27,5 +26,54 @@ h1 {
 .card-text {
     display: table-cell;
     vertical-align: middle;
-    /*line-height: normal;*/
+}
+
+.control-panel {
+    -webkit-box-sizing: border-box;
+    -mox-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+    max-width: 500px;
+    background-color: #f3f3f3;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.ctrl-btn {
+    min-width: 75px;
+    max-width: 100px;
+    height: 40px;
+    background-color: gray;
+    box-shadow: none;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #faffd8;
+}
+
+.btn-dark-blue {
+    background-color: #54577c;
+}
+
+.btn-dark-blue:hover {
+    background-color: #6e74b2;
+}
+
+.btn-light-blue {
+    background-color: #4a7b9d;
+}
+
+.btn-light-blue:hover {
+    background-color: #5d96bd;
+}
+
+.btn-gray {
+    background-color: #9aa899;
+}
+
+.btn-gray:hover {
+    background-color: #bbccb9;
 }
