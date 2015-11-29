@@ -3,6 +3,8 @@ $(document).ready(function() {
 'use strict';
 
 var cardSide = 'front';
+var tempCardSide = cardSide;
+var swapText = 'Show backs';
 var currentCard;
 
 var randomCard = function(cardStack) {
@@ -11,12 +13,21 @@ var randomCard = function(cardStack) {
 };
 
 var nextCard = function() {
+    tempCardSide = cardSide;
     currentCard = randomCard(commands);
     $('.card-text').text(currentCard[cardSide]);
 };
 
 var flipCard = function() {
+    tempCardSide = (tempCardSide === 'front') ? 'back' : 'front';
+    $('.card-text').text(currentCard[tempCardSide]);
+};
+
+var swapSides = function() {
     cardSide = (cardSide === 'front') ? 'back' : 'front';
+    tempCardSide = cardSide;
+    swapText = (swapText === 'Show backs') ? 'Show fronts' : 'Show backs';
+    $('.swap-sides').text(swapText);
     $('.card-text').text(currentCard[cardSide]);
 };
 
@@ -26,6 +37,10 @@ $('.next-card').on('click', function() {
 
 $('.flip-card').on('click', function() {
     flipCard();
+});
+
+$('.swap-sides').on('click', function() {
+    swapSides();
 });
 
 var commands = [
@@ -54,5 +69,9 @@ var commands = [
     {front: 'chmod', back: 'change permission modifiers'},
     {front: 'chown', back: 'change ownership'}
 ];
+
+nextCard();
+
+$('.swap-sides').text(swapText);
 
 });
