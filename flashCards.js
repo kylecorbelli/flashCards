@@ -74,7 +74,11 @@ var commands = [
     {front: 'exit', back: 'exit the shell'},
     {front: 'sudo', back: 'become super user root'},
     {front: 'chmod', back: 'change permission modifiers'},
-    {front: 'chown', back: 'change ownership'}
+    {front: 'chown', back: 'change ownership'},
+    {front: '$|$', back: 'takes the output from the command on the left, and pipes it to the command on the right'},
+    {front: '$<$', back: 'takes and sends the input from the file on the right to the program on the left'},
+    {front: '$>$', back: 'takes the output of the command on the left, then writes it to the file on the right'},
+    {front: '$>>$', back: 'takes the output of the command on the left, then appends it to the file on the right'}
 ];
 
 nextCard();
