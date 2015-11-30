@@ -64,13 +64,15 @@ var commands = [
     {front: 'less', back: 'page through a file'},
     {front: 'cat', back: 'print the whole file'},
     {front: 'xargs', back: 'execute arguments'},
-    {front: 'find', back: 'find files'},
-    {front: 'grep', back: 'find things inside files'},
+    {front: 'find STARTDIR -name WILDCARD -print', back: 'find files'},
+    {front: 'grep SEARCHTERM SEARCHFILE', back: 'find things inside files'},
     {front: 'man', back: 'read a manual page'},
     {front: 'apropos', back: 'find what man page is appropriate'},
+    {front: 'xdg-open', back: 'open file with its default program'},
     {front: 'evn', back: 'look at your environment'},
     {front: 'echo', back: 'print some arguments'},
     {front: 'export', back: 'export/set a new environment variable'},
+    {front: 'unset', back: 'remove an environment variable'},
     {front: 'exit', back: 'exit the shell'},
     {front: 'sudo', back: 'become super user root'},
     {front: 'chmod', back: 'change permission modifiers'},
@@ -78,7 +80,8 @@ var commands = [
     {front: '$|$', back: 'takes the output from the command on the left, and pipes it to the command on the right'},
     {front: '$<$', back: 'takes and sends the input from the file on the right to the program on the left'},
     {front: '$>$', back: 'takes the output of the command on the left, then writes it to the file on the right'},
-    {front: '$>>$', back: 'takes the output of the command on the left, then appends it to the file on the right'}
+    {front: '$>>$', back: 'takes the output of the command on the left, then appends it to the file on the right'},
+    {front: '*' , back: 'matches anything in a wildcard'}
 ];
 
 nextCard();
